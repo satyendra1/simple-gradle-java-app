@@ -11,4 +11,7 @@ stage('Build') {
 // Execute gradle build associated with this project.
 sh './gradlew build'
 }
+stage('Docker image build'){
+sh 'docker build -t santyrocker/myjavaapp:${env.BUILD_ID} .'
+}
 }
